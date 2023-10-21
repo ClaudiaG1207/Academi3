@@ -33,5 +33,21 @@ namespace ProyecAcademiaEuropea
             FormPrincipal FP = new FormPrincipal();
             FP.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           Pagos pagos = new Pagos();
+            pagos.Show();
+        }
     }
 }

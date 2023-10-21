@@ -55,6 +55,7 @@
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="DEstudiantescs.cs" />
     <Compile Include="DIdioma.cs" />
+    <Compile Include="DPersonal.cs" />
     <Compile Include="DUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

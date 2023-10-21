@@ -261,6 +261,7 @@
             this.dtPersonal.ShowEditingIcon = false;
             this.dtPersonal.Size = new System.Drawing.Size(1243, 279);
             this.dtPersonal.TabIndex = 46;
+            this.dtPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtPersonal_CellContentClick);
             // 
             // space1
             // 
@@ -299,7 +300,7 @@
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(131, 37);
             this.BtnEditar.TabIndex = 68;
-            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.Text = "Actualizar";
             this.BtnEditar.UseVisualStyleBackColor = false;
             // 
             // BtnGuardar

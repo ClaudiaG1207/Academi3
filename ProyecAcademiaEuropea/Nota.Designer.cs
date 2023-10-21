@@ -41,7 +41,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.BtnMini = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbSemestre = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,15 +50,24 @@
             this.textBoxnota = new System.Windows.Forms.TextBox();
             this.cbnivelnot = new System.Windows.Forms.ComboBox();
             this.cbnombreEstudiante = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnMini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtEstudiantes
@@ -74,7 +82,7 @@
             this.Eliminar,
             this.Editar});
             this.dtEstudiantes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtEstudiantes.Location = new System.Drawing.Point(0, 421);
+            this.dtEstudiantes.Location = new System.Drawing.Point(0, 572);
             this.dtEstudiantes.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.dtEstudiantes.Name = "dtEstudiantes";
             this.dtEstudiantes.ReadOnly = true;
@@ -83,7 +91,7 @@
             this.dtEstudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtEstudiantes.ShowCellToolTips = false;
             this.dtEstudiantes.ShowEditingIcon = false;
-            this.dtEstudiantes.Size = new System.Drawing.Size(982, 279);
+            this.dtEstudiantes.Size = new System.Drawing.Size(1256, 279);
             this.dtEstudiantes.TabIndex = 72;
             // 
             // space1
@@ -119,31 +127,31 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(484, 268);
+            this.label1.Location = new System.Drawing.Point(55, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 25);
+            this.label1.Size = new System.Drawing.Size(152, 25);
             this.label1.TabIndex = 70;
-            this.label1.Text = "Nivel:";
+            this.label1.Text = "Nivel de curso :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(77, 161);
+            this.label2.Location = new System.Drawing.Point(72, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 25);
+            this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 68;
-            this.label2.Text = "Nota:";
+            this.label2.Text = "Nota :";
             // 
             // LbEstuantesR
             // 
             this.LbEstuantesR.AutoSize = true;
-            this.LbEstuantesR.Font = new System.Drawing.Font("Century Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbEstuantesR.Font = new System.Drawing.Font("Century Gothic", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbEstuantesR.ForeColor = System.Drawing.Color.Gold;
-            this.LbEstuantesR.Location = new System.Drawing.Point(513, 41);
+            this.LbEstuantesR.Location = new System.Drawing.Point(667, 55);
             this.LbEstuantesR.Name = "LbEstuantesR";
-            this.LbEstuantesR.Size = new System.Drawing.Size(82, 27);
+            this.LbEstuantesR.Size = new System.Drawing.Size(108, 37);
             this.LbEstuantesR.TabIndex = 64;
             this.LbEstuantesR.Text = "Notas:";
             // 
@@ -154,7 +162,7 @@
             "A",
             "B",
             "C"});
-            this.cbgrupo.Location = new System.Drawing.Point(158, 271);
+            this.cbgrupo.Location = new System.Drawing.Point(240, 183);
             this.cbgrupo.Name = "cbgrupo";
             this.cbgrupo.Size = new System.Drawing.Size(157, 24);
             this.cbgrupo.TabIndex = 74;
@@ -164,11 +172,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(56, 268);
+            this.label3.Location = new System.Drawing.Point(128, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 25);
+            this.label3.Size = new System.Drawing.Size(80, 25);
             this.label3.TabIndex = 73;
-            this.label3.Text = "grupo:";
+            this.label3.Text = "Grupo :";
             // 
             // dataGridViewImageColumn1
             // 
@@ -191,29 +199,18 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(830, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(1199, 12);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 43);
+            this.pictureBox3.Size = new System.Drawing.Size(45, 57);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 67;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // BtnMini
-            // 
-            this.BtnMini.Image = ((System.Drawing.Image)(resources.GetObject("BtnMini.Image")));
-            this.BtnMini.Location = new System.Drawing.Point(895, 12);
-            this.BtnMini.Name = "BtnMini";
-            this.BtnMini.Size = new System.Drawing.Size(25, 43);
-            this.BtnMini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BtnMini.TabIndex = 66;
-            this.BtnMini.TabStop = false;
-            this.BtnMini.Click += new System.EventHandler(this.BtnMini_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(369, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(507, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(118, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -226,7 +223,7 @@
             this.cbSemestre.Items.AddRange(new object[] {
             "1er Semestre",
             "2do Semestre"});
-            this.cbSemestre.Location = new System.Drawing.Point(573, 218);
+            this.cbSemestre.Location = new System.Drawing.Point(165, 79);
             this.cbSemestre.Name = "cbSemestre";
             this.cbSemestre.Size = new System.Drawing.Size(157, 24);
             this.cbSemestre.TabIndex = 76;
@@ -236,11 +233,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(453, 214);
+            this.label4.Location = new System.Drawing.Point(35, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 25);
+            this.label4.Size = new System.Drawing.Size(103, 25);
             this.label4.TabIndex = 75;
-            this.label4.Text = "Semestre:";
+            this.label4.Text = "Semestre :";
             // 
             // cbiodoma
             // 
@@ -250,7 +247,7 @@
             "Francés",
             "Portugués",
             "Italiano"});
-            this.cbiodoma.Location = new System.Drawing.Point(158, 213);
+            this.cbiodoma.Location = new System.Drawing.Point(240, 81);
             this.cbiodoma.Name = "cbiodoma";
             this.cbiodoma.Size = new System.Drawing.Size(157, 24);
             this.cbiodoma.TabIndex = 78;
@@ -260,26 +257,26 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(56, 214);
+            this.label5.Location = new System.Drawing.Point(138, 82);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 25);
+            this.label5.Size = new System.Drawing.Size(75, 25);
             this.label5.TabIndex = 77;
-            this.label5.Text = "Idioma:";
+            this.label5.Text = "Curso :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(355, 161);
+            this.label6.Location = new System.Drawing.Point(22, 35);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(195, 25);
+            this.label6.Size = new System.Drawing.Size(201, 25);
             this.label6.TabIndex = 79;
-            this.label6.Text = "Nombre Estudiante:";
+            this.label6.Text = "Nombre Estudiante :";
             // 
             // textBoxnota
             // 
-            this.textBoxnota.Location = new System.Drawing.Point(158, 165);
+            this.textBoxnota.Location = new System.Drawing.Point(165, 37);
             this.textBoxnota.Name = "textBoxnota";
             this.textBoxnota.Size = new System.Drawing.Size(157, 22);
             this.textBoxnota.TabIndex = 81;
@@ -294,7 +291,7 @@
             "Nivel 4",
             "Nivel 5",
             "Nivel 6"});
-            this.cbnivelnot.Location = new System.Drawing.Point(572, 272);
+            this.cbnivelnot.Location = new System.Drawing.Point(240, 133);
             this.cbnivelnot.Name = "cbnivelnot";
             this.cbnivelnot.Size = new System.Drawing.Size(157, 24);
             this.cbnivelnot.TabIndex = 82;
@@ -302,44 +299,21 @@
             // cbnombreEstudiante
             // 
             this.cbnombreEstudiante.FormattingEnabled = true;
-            this.cbnombreEstudiante.Location = new System.Drawing.Point(573, 161);
+            this.cbnombreEstudiante.Location = new System.Drawing.Point(240, 35);
             this.cbnombreEstudiante.Name = "cbnombreEstudiante";
             this.cbnombreEstudiante.Size = new System.Drawing.Size(157, 24);
             this.cbnombreEstudiante.TabIndex = 80;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(940, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 43);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 83;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // BtnEliminar
-            // 
-            this.BtnEliminar.BackColor = System.Drawing.Color.Gold;
-            this.BtnEliminar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEliminar.ForeColor = System.Drawing.Color.Navy;
-            this.BtnEliminar.Location = new System.Drawing.Point(691, 369);
-            this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(131, 37);
-            this.BtnEliminar.TabIndex = 86;
-            this.BtnEliminar.Text = "Elimar";
-            this.BtnEliminar.UseVisualStyleBackColor = false;
             // 
             // BtnEditar
             // 
             this.BtnEditar.BackColor = System.Drawing.Color.Gold;
             this.BtnEditar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditar.ForeColor = System.Drawing.Color.Navy;
-            this.BtnEditar.Location = new System.Drawing.Point(838, 369);
+            this.BtnEditar.Location = new System.Drawing.Point(356, 47);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(131, 37);
             this.BtnEditar.TabIndex = 85;
-            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.Text = "Actualizar";
             this.BtnEditar.UseVisualStyleBackColor = false;
             // 
             // BtnGuardar
@@ -347,38 +321,146 @@
             this.BtnGuardar.BackColor = System.Drawing.Color.Gold;
             this.BtnGuardar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.ForeColor = System.Drawing.Color.Navy;
-            this.BtnGuardar.Location = new System.Drawing.Point(543, 369);
+            this.BtnGuardar.Location = new System.Drawing.Point(354, 91);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(131, 37);
             this.BtnGuardar.TabIndex = 84;
             this.BtnGuardar.Text = "Guadar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.cbnivelnot);
+            this.groupBox1.Controls.Add(this.cbnombreEstudiante);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cbiodoma);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.cbgrupo);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 163);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(611, 234);
+            this.groupBox1.TabIndex = 87;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Font = new System.Drawing.Font("Modern No. 20", 13.8F);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(662, 163);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(536, 394);
+            this.groupBox2.TabIndex = 88;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Control de Notas ";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewImageColumn3,
+            this.dataGridViewImageColumn4});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.ShowCellToolTips = false;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.Size = new System.Drawing.Size(530, 363);
+            this.dataGridView1.TabIndex = 74;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::ProyecAcademiaEuropea.Properties.Resources.borrar;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.MinimumWidth = 10;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Width = 200;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.HeaderText = "";
+            this.dataGridViewImageColumn4.Image = global::ProyecAcademiaEuropea.Properties.Resources.boligrafo;
+            this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn4.MinimumWidth = 10;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.ReadOnly = true;
+            this.dataGridViewImageColumn4.Width = 200;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.BtnEditar);
+            this.groupBox3.Controls.Add(this.BtnGuardar);
+            this.groupBox3.Controls.Add(this.textBoxnota);
+            this.groupBox3.Controls.Add(this.cbSemestre);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Location = new System.Drawing.Point(50, 419);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(504, 135);
+            this.groupBox3.TabIndex = 86;
+            this.groupBox3.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Navy;
+            this.button1.Location = new System.Drawing.Point(461, 143);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 37);
+            this.button1.TabIndex = 87;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gold;
+            this.button2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Navy;
+            this.button2.Location = new System.Drawing.Point(459, 187);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 37);
+            this.button2.TabIndex = 86;
+            this.button2.Text = "Guadar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // Nota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(982, 700);
-            this.Controls.Add(this.BtnEliminar);
-            this.Controls.Add(this.BtnEditar);
-            this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.cbnivelnot);
-            this.Controls.Add(this.textBoxnota);
-            this.Controls.Add(this.cbnombreEstudiante);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbiodoma);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cbSemestre);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbgrupo);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(1256, 851);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtEstudiantes);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.BtnMini);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LbEstuantesR);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -386,9 +468,13 @@
             this.Text = "Nota";
             ((System.ComponentModel.ISupportInitialize)(this.dtEstudiantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnMini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +489,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox BtnMini;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LbEstuantesR;
         private System.Windows.Forms.ComboBox cbgrupo;
@@ -418,9 +503,16 @@
         private System.Windows.Forms.TextBox textBoxnota;
         private System.Windows.Forms.ComboBox cbnivelnot;
         private System.Windows.Forms.ComboBox cbnombreEstudiante;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button BtnEliminar;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
