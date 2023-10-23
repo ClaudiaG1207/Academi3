@@ -63,13 +63,21 @@ namespace ProyecAcademiaEuropea
         }
         private void MostrarUsuarios()
         {
-            DataTable dt = new DataTable();
-            NUsuarios funcion = new NUsuarios();
-            funcion.MostarUsuarios(dt);
-            dtUsuarios.DataSource = dt;
-            Bases.DiseñoDtv(ref dtUsuarios);
-           dtUsuarios.Columns[3].Visible= false;
-           dtUsuarios.Columns[4].Visible= false;
+            try
+            {
+                DataTable dt = new DataTable();
+                NUsuarios funcion = new NUsuarios();
+                funcion.MostarUsuarios(dt);
+                dtUsuarios.DataSource = dt;
+                Bases.DiseñoDtv(ref dtUsuarios);
+                //dtUsuarios.Columns[3].Visible = false;
+                //dtUsuarios.Columns[4].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
             
             
             MostrarCargo();
@@ -92,9 +100,8 @@ namespace ProyecAcademiaEuropea
         {
 
             idUsa = int.Parse(dtUsuarios.SelectedCells[3].Value.ToString());
-            TxtUsuario.Text = dtUsuarios.SelectedCells[5].Value.ToString();
-            TxtContra.Text = dtUsuarios.SelectedCells[6].Value.ToString();
-            IdCargo= int.Parse(dtUsuarios.SelectedCells[4].Value.ToString());
+            TxtUsuario.Text = dtUsuarios.SelectedCells[4].Value.ToString();
+            TxtContra.Text = dtUsuarios.SelectedCells[5].Value.ToString();
         }
         private void EditarUsuario()
 

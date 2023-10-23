@@ -13,12 +13,12 @@ namespace CapaDatos
     {
         CD_Conexion Conect = new CD_Conexion();
 
-        public bool insertarPersonal(string ced, string NomA, string direc, int Edad, int cel, string correo, string nacionalidad)
+        public bool insertarPersonal(string ced, string NomA, string direc, int Edad, int cel, string correo, string nacionalidad, string usuario, string contra,int idcargo)
         {
             try
             {
                 Conect.Abrir();
-                SqlCommand AggUser = new SqlCommand("AgregarPersonal", CD_Conexion.conectar);
+                SqlCommand AggUser = new SqlCommand("AgregarPersonalYUsuario", CD_Conexion.conectar);
                 AggUser.CommandType = CommandType.StoredProcedure;
                 AggUser.Parameters.AddWithValue("@Cedula", ced);
                 AggUser.Parameters.AddWithValue("@NomAp", NomA);
@@ -27,6 +27,9 @@ namespace CapaDatos
                 AggUser.Parameters.AddWithValue("@cel", cel);
                 AggUser.Parameters.AddWithValue("@Correo", correo);
                 AggUser.Parameters.AddWithValue("@Nacionalidad", nacionalidad);
+                AggUser.Parameters.AddWithValue("@Usuario", usuario);
+                AggUser.Parameters.AddWithValue("@Contraseña", contra);
+                AggUser.Parameters.AddWithValue("@IdCargo", idcargo);
                 AggUser.ExecuteNonQuery();
                 MessageBox.Show("Se realizo el regitro con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
@@ -48,7 +51,7 @@ namespace CapaDatos
             try
             {
                 Conect.Abrir();
-                SqlDataAdapter da = new SqlDataAdapter("ListarPersonal", CD_Conexion.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("MostrarPersonal", CD_Conexion.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 da.Fill(dt);

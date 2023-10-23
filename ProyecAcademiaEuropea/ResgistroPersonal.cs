@@ -25,8 +25,11 @@ namespace ProyecAcademiaEuropea
         public int FCel;
         public string FCorreo;
         public string FNacionalidad;
+        public string usuario;
+        public string clave;
+        int idcargo;
         int idPersonal;
-        
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -46,13 +49,14 @@ namespace ProyecAcademiaEuropea
 
         private void ResgistroPersonal_Load(object sender, EventArgs e)
         {
-
+            MostrarCargos();
+            MostrarPersonal();
         }
         private void MostrarPersonal()
         {
             DataTable dt = new DataTable();
-            NEstudiantes funcion = new NEstudiantes();
-            funcion.MostarEstudiante(dt);
+            NPersonal funcion = new NPersonal();
+            funcion.MostarPersonal(dt);
             dtPersonal.DataSource = dt;
             Bases.DiseñoDtv(ref dtPersonal);
         }
@@ -92,9 +96,35 @@ namespace ProyecAcademiaEuropea
             TxtEdadPer.Text = dtPersonal.SelectedCells[7].Value.ToString();
             TxtTelefPer.Text = dtPersonal.SelectedCells[8].Value.ToString();
             TxtCorreoPer.Text = dtPersonal.SelectedCells[9].Value.ToString();
-            ComNacionalidadPer.Text = dtPersonal    .SelectedCells[10].Value.ToString();
+            ComNacionalidadPer.Text = dtPersonal.SelectedCells[10].Value.ToString();
 
         }
 
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            InsertarPersonal();
+        }
+        private void MostrarCargos()
+        {
+            NUsuarios nUsuarios = new NUsuarios();
+            nUsuarios.MostarCargos(CbCargoPer);
+        }
+        private void InsertarPersonal()
+        {
+            NPersonal nper = new NPersonal();
+            FCedula = TxtCedulaPer.Text;
+            FNomAp = txtNomPer.Text;
+            FDirec = TxtDirecPer.Text;
+            FEdad = int.Parse(TxtEdadPer.Text);
+            FCel = int.Parse(TxtCedulaPer.Text);
+            FCorreo = TxtCorreoPer.Text;
+            FNacionalidad = ComNacionalidadPer.Text;
+            idcargo =int.Parse( CbCargoPer.SelectedValue.ToString());
+            clave = TxtContra.Text;
+            usuario = TxtUsuario.Text;
+            nper.AgregarPersonal(FCedula, FNomAp, FDirec,
+                FEdad, FCel, FCorreo, FNacionalidad,usuario,clave,idcargo);
+            MostrarPersonal();
+        }
     }
 }

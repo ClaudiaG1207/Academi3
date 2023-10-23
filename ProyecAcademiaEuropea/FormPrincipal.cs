@@ -94,9 +94,9 @@ namespace ProyecAcademiaEuropea
 
         private void btnNivel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            nivel nil = new nivel();
-            nil.Show();
+            //this.Hide();
+            //nivel nil = new nivel();
+            //nil.Show();
         }
 
         private void btnNota_Click(object sender, EventArgs e)
