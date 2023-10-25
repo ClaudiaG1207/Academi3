@@ -30,8 +30,8 @@ namespace ProyecAcademiaEuropea
         {
             USUARIO= TxtUsuario.Text;
             CLAVE = TxtContra.Text;
-            IdCargo=int.Parse(cbCargo.SelectedValue.ToString());
-            Usuario.AgregarUsuario(USUARIO, CLAVE, IdCargo);
+            
+            Usuario.AgregarUsuario(USUARIO, CLAVE);
             TxtContra.Clear();
             TxtUsuario.Clear();
             MostrarUsuarios();
@@ -53,13 +53,13 @@ namespace ProyecAcademiaEuropea
         {
             var vr = !string.IsNullOrEmpty(TxtUsuario.Text) && 
             !string.IsNullOrEmpty(TxtContra.Text);
-            BtnGuardar.Enabled = vr;
+            
             BtnEditar.Enabled = vr;
         }
         private void Usuarios_Load(object sender, EventArgs e)
         {
             MostrarUsuarios();
-            BtnGuardar.Enabled=false;
+            
         }
         private void MostrarUsuarios()
         {
@@ -79,8 +79,7 @@ namespace ProyecAcademiaEuropea
             }
            
             
-            
-            MostrarCargo();
+           
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -99,7 +98,7 @@ namespace ProyecAcademiaEuropea
         private void CapturarDatos()
         {
 
-            idUsa = int.Parse(dtUsuarios.SelectedCells[3].Value.ToString());
+            idUsa = int.Parse(dtUsuarios.SelectedCells[2].Value.ToString());
             TxtUsuario.Text = dtUsuarios.SelectedCells[4].Value.ToString();
             TxtContra.Text = dtUsuarios.SelectedCells[5].Value.ToString();
         }
@@ -109,10 +108,10 @@ namespace ProyecAcademiaEuropea
 
             USUARIO = TxtUsuario.Text;
             CLAVE = TxtContra.Text;
-            IdCargo = int.Parse(cbCargo.SelectedValue.ToString());
+           
             TxtContra.Clear();
             TxtUsuario.Clear();
-            Usuario.EditarUS(idUsa,USUARIO,CLAVE, IdCargo);
+            Usuario.EditarUS(idUsa,USUARIO,CLAVE);
             MostrarUsuarios();
             MessageBox.Show("Se actualizo el regitro con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -123,24 +122,13 @@ namespace ProyecAcademiaEuropea
         }
         private void dtUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dtUsuarios.Columns["Eliminar"].Index)
-            {
-                DialogResult result = MessageBox.Show("¿Desea eliminar este usuario?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
-                {
-                    EliminarUsuario();
-                    MostrarUsuarios();
-                }
-
-            }
+            
             if (e.ColumnIndex == dtUsuarios.Columns["Editar"].Index)
             {
                 CapturarDatos();
                 BtnEditar.Visible = true;
-                BtnGuardar.Visible = false;
+               
             }
-
-
         }
         
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -162,10 +150,8 @@ namespace ProyecAcademiaEuropea
         {
             ValidarCampos();
         }
-        private void MostrarCargo()
-        {
-            
-            Usuario.MostarCargos(cbCargo);
-        }
+      
+
+        
     }
 }

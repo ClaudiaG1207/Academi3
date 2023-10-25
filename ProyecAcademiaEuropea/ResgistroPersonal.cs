@@ -59,6 +59,10 @@ namespace ProyecAcademiaEuropea
             funcion.MostarPersonal(dt);
             dtPersonal.DataSource = dt;
             Bases.DiseñoDtv(ref dtPersonal);
+            dtPersonal.Columns[3].Visible = false;
+            dtPersonal.Columns[11].Visible = false;
+            dtPersonal.Columns[13].Visible = false;
+            dtPersonal.Columns[14].Visible = false;
         }
         private void EliminarPersonal()
         {
@@ -82,6 +86,10 @@ namespace ProyecAcademiaEuropea
                 CapturarDatos();
                 BtnEditar.Visible = true;
                 BtnGuardar.Visible = false;
+                label7.Visible= false;
+                label10.Visible= false;
+                TxtUsuario.Visible= false;
+                TxtContra.Visible= false;
             }
 
         }
@@ -90,13 +98,14 @@ namespace ProyecAcademiaEuropea
         {
 
             idPersonal = int.Parse(dtPersonal.SelectedCells[3].Value.ToString());
-            TxtCedulaPer.Text = dtPersonal.SelectedCells[4].Value.ToString();
-            txtNomPer.Text = dtPersonal.SelectedCells[5].Value.ToString();
-            TxtDirecPer.Text = dtPersonal.SelectedCells[6].Value.ToString();
-            TxtEdadPer.Text = dtPersonal.SelectedCells[7].Value.ToString();
-            TxtTelefPer.Text = dtPersonal.SelectedCells[8].Value.ToString();
+            TxtCedulaPer.Text = dtPersonal.SelectedCells[5].Value.ToString();
+            txtNomPer.Text = dtPersonal.SelectedCells[4].Value.ToString();
+            TxtDirecPer.Text = dtPersonal.SelectedCells[8].Value.ToString();
+            TxtEdadPer.Text = dtPersonal.SelectedCells[6].Value.ToString();
+            TxtTelefPer.Text = dtPersonal.SelectedCells[7].Value.ToString();
             TxtCorreoPer.Text = dtPersonal.SelectedCells[9].Value.ToString();
             ComNacionalidadPer.Text = dtPersonal.SelectedCells[10].Value.ToString();
+            
 
         }
 
@@ -125,6 +134,37 @@ namespace ProyecAcademiaEuropea
             nper.AgregarPersonal(FCedula, FNomAp, FDirec,
                 FEdad, FCel, FCorreo, FNacionalidad,usuario,clave,idcargo);
             MostrarPersonal();
+        }
+
+        private void EditarPersonal()
+        {
+            NPersonal nper = new NPersonal();
+            FCedula = TxtCedulaPer.Text;
+            FNomAp = txtNomPer.Text;
+            FDirec = TxtDirecPer.Text;
+            FEdad = int.Parse(TxtEdadPer.Text);
+            FCel = int.Parse(TxtCedulaPer.Text);
+            FCorreo = TxtCorreoPer.Text;
+            FNacionalidad = ComNacionalidadPer.Text;
+            idcargo = int.Parse(CbCargoPer.SelectedValue.ToString());
+            clave = TxtContra.Text;
+            usuario = TxtUsuario.Text;
+            nper.editarPersonal(idPersonal,FCedula, FNomAp, FDirec,
+                FEdad, FCel, FCorreo, FNacionalidad, idcargo);
+            MostrarPersonal();
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            EditarPersonal();
+            TxtCedulaPer.Clear();
+            txtNomPer.Clear();
+            TxtDirecPer.Clear();
+            TxtEdadPer.Clear();
+            TxtCedulaPer.Clear();
+            TxtCorreoPer.Clear();
+            TxtEdadPer.Clear();
+            TxtTelefPer.Clear();
         }
     }
 }

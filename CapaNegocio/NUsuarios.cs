@@ -17,15 +17,15 @@ namespace CapaNegocio
         DUsuarios Usuariop = new DUsuarios();
         Hash hashPassword = new Hash();
 
-        public void AgregarUsuario( string NombreUsuario, string Contrasena, int IdCargo)
+        public void AgregarUsuario( string NombreUsuario, string Contrasena)
         {
             string ContrasenaHasheada = hashPassword.PasswordHash(Contrasena);
-            Usuariop.Insertar( NombreUsuario, ContrasenaHasheada, IdCargo);
+            Usuariop.Insertar( NombreUsuario, ContrasenaHasheada);
         }
-        public void EditarUS(int id, string NombreUsuario, string Contrasena, int IdCargo)
+        public void EditarUS(int id, string NombreUsuario, string Contrasena)
         {
             string ContrasenaHasheada = hashPassword.PasswordHash(Contrasena);
-            Usuariop.editarUsuario(id, NombreUsuario, ContrasenaHasheada, IdCargo);
+            Usuariop.editarUsuario(id, NombreUsuario, ContrasenaHasheada);
         }
         public void MostarUsuarios(DataTable dt)
         {
@@ -105,6 +105,12 @@ namespace CapaNegocio
         public void MostarCargos(ComboBox combo)
         {
             Usuariop.MostrarCargo(combo);
+        }
+        readonly DUsuarios objd = new DUsuarios();
+        public DataTable NLogin(string usuario, string clave)
+        {
+            string ContrasenaHasheada = hashPassword.PasswordHash(clave);
+            return objd.D_Usuarios(usuario,ContrasenaHasheada);
         }
     }
 

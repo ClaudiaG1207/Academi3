@@ -5,23 +5,19 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos;
 using System.Windows.Forms;
-using System.Runtime.ConstrainedExecution;
-using System.Diagnostics.Contracts;
 
 namespace CapaDatos
 {
-    public class DEstudiantescs
+    public class DTutor
     {
         CD_Conexion Conect = new CD_Conexion();
-
-        public bool InseeEtudiantes(string ced, string NomA, string direc, int Edad, int cel, string correo, string nacionalidad, int idtutor)
+        public bool IsertarTutor(string ced, string NomA, string direc, int Edad, int cel, string correo, string nacionalidad)
         {
             try
             {
                 Conect.Abrir();
-                SqlCommand AggUser = new SqlCommand("AgregarEstudiante", CD_Conexion.conectar);
+                SqlCommand AggUser = new SqlCommand("AgregarTutor", CD_Conexion.conectar);
                 AggUser.CommandType = CommandType.StoredProcedure;
                 AggUser.Parameters.AddWithValue("@Cedula", ced);
                 AggUser.Parameters.AddWithValue("@NomAp", NomA);
@@ -30,7 +26,6 @@ namespace CapaDatos
                 AggUser.Parameters.AddWithValue("@cel", cel);
                 AggUser.Parameters.AddWithValue("@Correo", correo);
                 AggUser.Parameters.AddWithValue("@Nacionalidad", nacionalidad);
-                AggUser.Parameters.AddWithValue("@idTutor", idtutor);
                 AggUser.ExecuteNonQuery();
                 MessageBox.Show("Se realizo el regitro con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
@@ -47,12 +42,12 @@ namespace CapaDatos
 
             }
         }
-        public void MostarEstudiante(ref DataTable dt)
+        public void MostarTutor(ref DataTable dt)
         {
             try
             {
                 Conect.Abrir();
-                SqlDataAdapter da = new SqlDataAdapter("ListarEstudiantes", CD_Conexion.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("MostrarTutor", CD_Conexion.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
 
                 da.Fill(dt);
@@ -63,14 +58,14 @@ namespace CapaDatos
             }
             finally { Conect.cerrar(); }
         }
-        public bool editarestudiantes(int idestudiante,string ced, string NomA, string direc, int Edad, int cel, string correo, string nacionalidad, int idtutor)
+        public bool EditarTutor(int idestudiante, string ced, string NomA, string direc, int Edad, int cel, string correo, string nacionalidad)
         {
             try
             {
                 Conect.Abrir();
-                SqlCommand cmd = new SqlCommand("EditarEstudiantes", CD_Conexion.conectar);
+                SqlCommand cmd = new SqlCommand("EditarTutor", CD_Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IdEstudiante", idestudiante);
+                cmd.Parameters.AddWithValue("@IdTutor", idestudiante);
                 cmd.Parameters.AddWithValue("@Cedula", ced);
                 cmd.Parameters.AddWithValue("@NomAp", NomA);
                 cmd.Parameters.AddWithValue("@Direccion", direc);
@@ -78,7 +73,6 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@cel", cel);
                 cmd.Parameters.AddWithValue("@Correo", correo);
                 cmd.Parameters.AddWithValue("@Nacionalidad", nacionalidad);
-                cmd.Parameters.AddWithValue("@idtutor", idtutor);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se actualizo el regitro con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
@@ -94,14 +88,14 @@ namespace CapaDatos
                 Conect.cerrar();
             }
         }
-        public void EliminarEstudiante(int id)
+        public void EliminarTutor(int id)
         {
             try
             {
                 Conect.Abrir();
-                SqlCommand cmd = new SqlCommand("EliminarEstudiante", CD_Conexion.conectar);
+                SqlCommand cmd = new SqlCommand("EliminarTutor", CD_Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idestudiante", id);               
+                cmd.Parameters.AddWithValue("@idTutor", id);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -113,13 +107,13 @@ namespace CapaDatos
             {
                 Conect.cerrar();
             }
-        }
-        public void BuscarEstudiantes(ref DataTable dt, string buscador)
+        } 
+        public void BuscarTutor(ref DataTable dt, string buscador)
         {
             try
             {
                 Conect.Abrir();
-                SqlDataAdapter da = new SqlDataAdapter("BuscarEstudiantes", CD_Conexion.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("BuscarTutor", CD_Conexion.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Buscador", buscador);
                 da.Fill(dt);
@@ -128,7 +122,7 @@ namespace CapaDatos
             {
                 MessageBox.Show(ex.StackTrace);
             }
-            finally { Conect.cerrar(); }
+            finally { Conect.cerrar(); } 
         }
     }
 }

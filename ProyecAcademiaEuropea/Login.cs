@@ -21,7 +21,14 @@ namespace ProyecAcademiaEuropea
 {
     public partial class Login : Form
     {
-
+        public static string Usuario;
+        public static string clave;
+        public static int idPersonal;
+        public static string NombrePersonal;
+        public static string Correo;
+        public static string Cargo;
+        FormPrincipal f = new FormPrincipal();
+        NUsuarios nuser = new NUsuarios();
         FormPrincipal FP = new FormPrincipal();
         public Login()
         {
@@ -117,15 +124,14 @@ namespace ProyecAcademiaEuropea
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            //Logueo();
             NUsuarios us = new NUsuarios();
-
-
             if (TxtUsuario.Text != "USUARIO")
             {
 
                 if (us.LoginUsuario(TxtUsuario.Text, TxtContra.Text) == true)
                 {
-                    
+
                     FP.Show();
                     this.Hide();
                 }
@@ -146,7 +152,7 @@ namespace ProyecAcademiaEuropea
                         TxtUsuario.Text = "USUARIO";
                         TxtUsuario.ForeColor = Color.White;
                     }
-                   
+
                 }
 
 
@@ -154,8 +160,47 @@ namespace ProyecAcademiaEuropea
             else smsERROR("CAMPOS VACIOS");
 
         }
+        private void Logueo()
+        {
+            if (string.IsNullOrEmpty(TxtUsuario.Text) || string.IsNullOrEmpty(TxtContra.Text))
+            {
+                MessageBox.Show("Los campos estan vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TxtUsuario.Focus();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                Usuario = TxtUsuario.Text;
+                clave = TxtContra.Text;
 
-      
+                try
+                {
+                    dt = nuser.NLogin(Usuario, clave);
+
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        idPersonal = Convert.ToInt32(dt.Rows[0][0]);
+                        NombrePersonal = dt.Rows[0][1].ToString();
+                        Correo = dt.Rows[0][2].ToString();
+                        Cargo = dt.Rows[0][2].ToString();
+                        Usuario = dt.Rows[0][4].ToString();
+                        f.Show();
+                        this.Hide();
+                        TxtContra.Clear();
+                        TxtUsuario.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o Contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void smsERROR(string sms)
         {
             LbError.Text = "    " + sms;
@@ -169,7 +214,7 @@ namespace ProyecAcademiaEuropea
 
         private void linkLabelContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this. Hide();
+            this.Hide();
             CorreoRecu Re = new CorreoRecu();
             Re.Show();
 

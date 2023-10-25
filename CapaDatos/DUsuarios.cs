@@ -12,14 +12,13 @@ namespace CapaDatos
     public class DUsuarios
     {
         CD_Conexion Conect = new CD_Conexion();
-        public void Insertar(string Usuario, string Password, int IdCargo)
+        public void Insertar(string Usuario, string Password)
         {
             Conect.Abrir();
             SqlCommand AggUser = new SqlCommand("Agregar_Usuario", CD_Conexion.conectar);
             AggUser.CommandType = CommandType.StoredProcedure;
             AggUser.Parameters.AddWithValue("@Usuario",Usuario);
             AggUser.Parameters.AddWithValue("@Clave", Password);
-            AggUser.Parameters.AddWithValue("@IdCargo", IdCargo);
             AggUser.ExecuteNonQuery();
             Conect.cerrar();
         }
@@ -56,7 +55,7 @@ namespace CapaDatos
             Conect.cerrar();
             return ContraseñaHash;
         }
-        public void editarUsuario(int idUS, string us, string clave, int IdCargo )
+        public void editarUsuario(int idUS, string us, string clave )
         {
             try
             {
@@ -66,7 +65,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@IdUsuario", idUS);
                 cmd.Parameters.AddWithValue("@Usuario", us);
                 cmd.Parameters.AddWithValue("@Clave", clave);
-                cmd.Parameters.AddWithValue("@IdCargo", IdCargo);
+                
 
 
                 cmd.ExecuteNonQuery();
@@ -145,6 +144,31 @@ namespace CapaDatos
                 //Cerrar la conexión a la base de datos
                 Conect.cerrar();
                 //cambio
+            }
+        }
+        public DataTable D_Usuarios(string usuario, string clave)
+        {
+            try
+            {
+                Conect.Abrir();
+                SqlCommand cmd = new SqlCommand("Login", CD_Conexion.conectar)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@clave", clave);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                Conect.cerrar();
             }
         }
     }

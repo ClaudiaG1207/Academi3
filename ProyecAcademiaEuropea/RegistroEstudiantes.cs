@@ -24,7 +24,10 @@ namespace ProyecAcademiaEuropea
             MostrarEstudiante();
             this.toolTip1.SetToolTip(this.TxtCorreoEstu, "El correo debe ser ejemplo: nombre@abc.com");
             TxtCorreoEstu.TextChanged += TxtCorreoEstu_TextChanged1;
-            
+            lbltutor.Visible = false;
+            txtTutor.Visible = false;
+            btnBuscarTutor.Visible = false;
+            txtIdTutor.Visible = false;
         }
 
         private void TxtCorreoEstu_TextChanged1(object sender, EventArgs e)
@@ -51,6 +54,11 @@ namespace ProyecAcademiaEuropea
         public string FNacionalidad;
         int idestudiante;
 
+        public  int idTutor;
+        public  string NomTutor;
+
+
+
         private void INSERTAR()
 
         {
@@ -61,7 +69,7 @@ namespace ProyecAcademiaEuropea
             FCel = int.Parse(TxtCelEstu.Text);
             FCorreo = TxtCorreoEstu.Text;
             FNacionalidad = CBNacionalidad.Text;           
-            Estudiante.AgregarEstudiante(FCedula, FNomAp, FDirec, FEdad, FCel, FCorreo, FNacionalidad);
+            Estudiante.AgregarEstudiante(FCedula, FNomAp, FDirec, FEdad, FCel, FCorreo, FNacionalidad,idTutor);
             MostrarEstudiante();
            
         }
@@ -75,7 +83,7 @@ namespace ProyecAcademiaEuropea
             FCel = int.Parse(TxtCelEstu.Text);
             FCorreo = TxtCorreoEstu.Text;
             FNacionalidad = CBNacionalidad.Text;
-            Estudiante.editarestudiante(idestudiante, FCedula, FNomAp, FDirec, FEdad, FCel, FCorreo, FNacionalidad);
+            Estudiante.editarestudiante(idestudiante, FCedula, FNomAp, FDirec, FEdad, FCel, FCorreo, FNacionalidad,idTutor);
             MostrarEstudiante();
            
         }
@@ -96,6 +104,8 @@ namespace ProyecAcademiaEuropea
             funcion.MostarEstudiante(dt);
             dtEstudiantes.DataSource = dt;
             Bases.DiseñoDtv(ref dtEstudiantes);
+            dtEstudiantes.Columns[3].Visible = false;
+            dtEstudiantes.Columns[11].Visible = false;
         }
         private void TxtDirecEstu_TextChanged(object sender, EventArgs e)
         {
@@ -106,35 +116,29 @@ namespace ProyecAcademiaEuropea
         {
             Application.Exit();
         }
-
         private void BtnMini_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Hide();
             FormPrincipal FP = new FormPrincipal();
             FP.Show();
         }
-
         private void RegistroEstudiantes_Load(object sender, EventArgs e)
         {
+
             BtnGuardar.Enabled = false;
+            //txtIdTutor.Text = idTutor.ToString();
+            //txtTutor.Text = NomTutor;
         }
-
-
         private void ValidarCampos()
         {
             var vr = !string.IsNullOrEmpty(TxtNomEstu.Text) && !string.IsNullOrEmpty(TxtDirecEstu.Text) && !string.IsNullOrEmpty(TxtCorreoEstu.Text) && !string.IsNullOrEmpty(TxtCedEstu.Text) && !string.IsNullOrEmpty(TxtEdadEStu.Text) && !string.IsNullOrEmpty(TxtCelEstu.Text) && !string.IsNullOrEmpty(CBNacionalidad.Text);
             BtnGuardar.Enabled = vr;
             btnActualizar.Enabled = vr;
         }
-
-    
-
-
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             
@@ -159,7 +163,6 @@ namespace ProyecAcademiaEuropea
             }
             
         }
-
         private void dtEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dtEstudiantes.Columns["Eliminar"].Index)
@@ -174,6 +177,20 @@ namespace ProyecAcademiaEuropea
             }
             if (e.ColumnIndex == dtEstudiantes.Columns["Editar"].Index)
             {
+                if (int.TryParse(TxtEdadEStu.Text, out int edad) && edad <= 17)
+                {
+                    lbltutor.Visible = true;
+                    txtTutor.Visible = true;
+                    btnBuscarTutor.Visible = true;
+                    txtIdTutor.Visible = true;
+                }
+                else
+                {
+                    lbltutor.Visible = false;
+                    txtTutor.Visible = false;
+                    btnBuscarTutor.Visible = false;
+                    txtIdTutor.Visible = false;
+                }
                 CapturarDatos();
                 btnActualizar.Visible = true;
                 BtnGuardar.Visible = false;
@@ -190,6 +207,8 @@ namespace ProyecAcademiaEuropea
             TxtCelEstu.Text = dtEstudiantes.SelectedCells[8].Value.ToString();
             TxtCorreoEstu.Text = dtEstudiantes.SelectedCells[9].Value.ToString();
             CBNacionalidad.Text = dtEstudiantes.SelectedCells[10].Value.ToString();
+            NomTutor=txtTutor.Text=dtEstudiantes.SelectedCells[11].Value.ToString();
+            
 
         }
        
@@ -238,6 +257,7 @@ namespace ProyecAcademiaEuropea
         {
 
             ValidarCampos();
+           
         }
 
         private void TxtCelEstu_TextChanged(object sender, EventArgs e)
@@ -304,6 +324,43 @@ namespace ProyecAcademiaEuropea
             Letras(e);
         }
 
-       
+        private void TxtEdadEStu_Leave(object sender, EventArgs e)
+        {
+            if (int.TryParse(TxtEdadEStu.Text, out int edad) && edad <= 17)
+            {
+                MessageBox.Show("Seleccione un tutor para el estudiante", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lbltutor.Visible = true;
+                txtTutor.Visible = true;
+                btnBuscarTutor.Visible = true;
+                txtIdTutor.Visible=true;
+                
+            }
+            else
+            {
+                lbltutor.Visible = false;
+                txtTutor.Visible = false;
+                txtIdTutor.Visible = false;
+                btnBuscarTutor.Visible = false;
+            }
+        }
+
+        private void btnBuscarTutor_Click(object sender, EventArgs e)
+        {
+            SelecionarTutorcs st = new SelecionarTutorcs();
+
+            if (st.ShowDialog() == DialogResult.OK)
+            {
+                // Después de que Form2 se cierre, puedes acceder a la propiedad DatoSeleccionado
+                // para obtener el dato seleccionado y utilizarlo en Form1.
+                 idTutor = st.idTutor;
+                NomTutor = st.NombreTutor;
+
+                // Haz algo con el dato en Form1
+                txtTutor.Text = NomTutor;
+                txtIdTutor.Text = idTutor.ToString();
+            }
+        }
+
+        
     } 
 }

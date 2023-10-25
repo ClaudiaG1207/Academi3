@@ -112,6 +112,18 @@
     <Compile Include="ResgistroPersonal.Designer.cs">
       <DependentUpon>ResgistroPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelecionarTutorcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecionarTutorcs.Designer.cs">
+      <DependentUpon>SelecionarTutorcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TutorEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TutorEstudiante.Designer.cs">
+      <DependentUpon>TutorEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +170,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResgistroPersonal.resx">
       <DependentUpon>ResgistroPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecionarTutorcs.resx">
+      <DependentUpon>SelecionarTutorcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TutorEstudiante.resx">
+      <DependentUpon>TutorEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

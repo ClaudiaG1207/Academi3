@@ -23,9 +23,9 @@ namespace CapaNegocio
         {
             perso.EliminarPersonal(id);
         }
-        public void editarPersonal(int id, string Ced, string NomAp, string Direc, int edad, int Cel, string Correo, string Nacionalidad)
+        public void editarPersonal(int id, string Ced, string NomAp, string Direc, int edad, int Cel, string Correo, string Nacionalidad, int idcar)
         {
-            perso.editarPersonal(id, Ced, NomAp, Direc, edad, Cel, Correo, Nacionalidad);
+            perso.editarPersonal(id, Ced, NomAp, Direc, edad, Cel, Correo, Nacionalidad,idcar);
         }
         public void MostarPersonal(DataTable dt)
         {

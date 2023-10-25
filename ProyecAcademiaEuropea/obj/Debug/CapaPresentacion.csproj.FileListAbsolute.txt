@@ -177,3 +177,5 @@ C:\Users\Dixon Blandon\Source\Repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\
 C:\Users\Dixon Blandon\Source\Repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\bin\Debug\CapaDatos.pdb
 C:\Users\Dixon Blandon\Source\Repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\bin\Debug\CapaDatos.dll.config
 C:\Users\Dixon Blandon\Source\Repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Users\Dixon Blandon\Source\Repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\obj\Debug\ProyecAcademiaEuropea.TutorEstudiante.resources
+C:\Users\Dixon Blandon\Source\Repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\obj\Debug\ProyecAcademiaEuropea.SelecionarTutorcs.resources

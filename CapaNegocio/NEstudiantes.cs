@@ -12,17 +12,17 @@ namespace CapaNegocio
     {
         DEstudiantescs Estu = new DEstudiantescs();
 
-        public void  AgregarEstudiante(string Ced, string NomAp, string Direc, int edad, int Cel, string Correo, string Nacionalidad)
+        public void  AgregarEstudiante(string Ced, string NomAp, string Direc, int edad, int Cel, string Correo, string Nacionalidad, int idtutor)
         {
-            Estu.InseeEtudiantes(Ced, NomAp, Direc, edad, Cel, Correo, Nacionalidad);
+            Estu.InseeEtudiantes(Ced, NomAp, Direc, edad, Cel, Correo, Nacionalidad,idtutor);
         }
         public void EliminarEstudiante(int id)
         {
             Estu.EliminarEstudiante(id);
         }
-        public void editarestudiante(int id,string Ced, string NomAp, string Direc, int edad, int Cel, string Correo, string Nacionalidad)
+        public void editarestudiante(int id,string Ced, string NomAp, string Direc, int edad, int Cel, string Correo, string Nacionalidad, int idtutor)
         {
-            Estu.editarestudiantes(id,Ced, NomAp, Direc, edad, Cel, Correo, Nacionalidad);
+            Estu.editarestudiantes(id,Ced, NomAp, Direc, edad, Cel, Correo, Nacionalidad,idtutor);
         }
         public void MostarEstudiante(DataTable dt)
         {

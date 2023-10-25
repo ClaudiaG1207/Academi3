@@ -62,21 +62,22 @@ namespace CapaDatos
             }
             finally { Conect.cerrar(); }
         }
-        public bool editarPersonal(int Idpersonal, string ced, string NomA, string direc, int Edad, int cel, string correo, string nacionalidad)
+        public bool editarPersonal(int Idpersonal, string ced, string NomA, string direc, int Edad, int cel, string correo, string nacionalidad, int IdCargo)
         {
             try
             {
                 Conect.Abrir();
-                SqlCommand cmd = new SqlCommand("EditarPersonal", CD_Conexion.conectar);
+                SqlCommand cmd = new SqlCommand("Editarpersonal", CD_Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idpersonal", Idpersonal);
+                cmd.Parameters.AddWithValue("@Idpersonal", Idpersonal);
                 cmd.Parameters.AddWithValue("@Cedula", ced);
                 cmd.Parameters.AddWithValue("@NomAp", NomA);
                 cmd.Parameters.AddWithValue("@Direccion", direc);
                 cmd.Parameters.AddWithValue("@Edad", Edad);
-                cmd.Parameters.AddWithValue("@cel", cel);
+                cmd.Parameters.AddWithValue("@Cel", cel);
                 cmd.Parameters.AddWithValue("@Correo", correo);
                 cmd.Parameters.AddWithValue("@Nacionalidad", nacionalidad);
+                cmd.Parameters.AddWithValue("@IdCargo", IdCargo);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se actualizo el regitro con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
@@ -99,7 +100,7 @@ namespace CapaDatos
                 Conect.Abrir();
                 SqlCommand cmd = new SqlCommand("EliminarPersonal", CD_Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idpersonal", id);
+                cmd.Parameters.AddWithValue("@IdPersonal", id);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
