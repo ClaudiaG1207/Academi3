@@ -63,6 +63,24 @@ namespace ProyecAcademiaEuropea
             dtPersonal.Columns[11].Visible = false;
             dtPersonal.Columns[13].Visible = false;
             dtPersonal.Columns[14].Visible = false;
+
+
+        }
+
+        private void edad()
+        {
+            NPersonal nper = new NPersonal();
+            if (int.TryParse(TxtEdadPer.Text, out FEdad))
+            {
+                if (FEdad >= 18)
+                {
+                    // La edad es válida (mayor o igual a 18), ahora puedes agregar el personal.
+                    nper.AgregarPersonal(FCedula, FNomAp, FDirec, FEdad, FCel, FCorreo, FNacionalidad, usuario, clave, idcargo);
+                }
+
+
+
+            }
         }
         private void EliminarPersonal()
         {
@@ -121,41 +139,65 @@ namespace ProyecAcademiaEuropea
         private void InsertarPersonal()
         {
             NPersonal nper = new NPersonal();
-            FCedula = TxtCedulaPer.Text;
-            FNomAp = txtNomPer.Text;
-            FDirec = TxtDirecPer.Text;
-            FEdad = int.Parse(TxtEdadPer.Text);
-            FCel = int.Parse(TxtCedulaPer.Text);
-            FCorreo = TxtCorreoPer.Text;
-            FNacionalidad = ComNacionalidadPer.Text;
-            idcargo =int.Parse( CbCargoPer.SelectedValue.ToString());
-            clave = TxtContra.Text;
-            usuario = TxtUsuario.Text;
-            nper.AgregarPersonal(FCedula, FNomAp, FDirec,
-                FEdad, FCel, FCorreo, FNacionalidad,usuario,clave,idcargo);
-            MostrarPersonal();
+            int x = Convert.ToInt32(TxtEdadPer.Text);
+            if (x>=18)
+            {
+                FCedula = TxtCedulaPer.Text;
+                FNomAp = txtNomPer.Text;
+                FDirec = TxtDirecPer.Text;
+                FEdad = int.Parse(TxtEdadPer.Text);
+                FCel = int.Parse(TxtTelefPer.Text);
+                FCorreo = TxtCorreoPer.Text;
+                FNacionalidad = ComNacionalidadPer.Text;
+                idcargo = int.Parse(CbCargoPer.SelectedValue.ToString());
+                clave = TxtContra.Text;
+                usuario = TxtUsuario.Text;
+                nper.AgregarPersonal(FCedula, FNomAp, FDirec,
+                    FEdad, FCel, FCorreo, FNacionalidad, usuario, clave, idcargo);
+                MostrarPersonal();
+            }
+            else
+            {
+                MessageBox.Show("debes ser legal");
+            }
+            
+           
+            
         }
 
         private void EditarPersonal()
         {
             NPersonal nper = new NPersonal();
-            FCedula = TxtCedulaPer.Text;
-            FNomAp = txtNomPer.Text;
-            FDirec = TxtDirecPer.Text;
-            FEdad = int.Parse(TxtEdadPer.Text);
-            FCel = int.Parse(TxtCedulaPer.Text);
-            FCorreo = TxtCorreoPer.Text;
-            FNacionalidad = ComNacionalidadPer.Text;
-            idcargo = int.Parse(CbCargoPer.SelectedValue.ToString());
-            clave = TxtContra.Text;
-            usuario = TxtUsuario.Text;
-            nper.editarPersonal(idPersonal,FCedula, FNomAp, FDirec,
-                FEdad, FCel, FCorreo, FNacionalidad, idcargo);
-            MostrarPersonal();
+            int x = Convert.ToInt32(TxtEdadPer.Text);
+            if (x >= 18)
+            {
+                FCedula = TxtCedulaPer.Text;
+                FNomAp = txtNomPer.Text;
+                FDirec = TxtDirecPer.Text;
+                FEdad = int.Parse(TxtEdadPer.Text);
+                FCel = int.Parse(TxtTelefPer.Text);
+                FCorreo = TxtCorreoPer.Text;
+                FNacionalidad = ComNacionalidadPer.Text;
+                idcargo = int.Parse(CbCargoPer.SelectedValue.ToString());
+                clave = TxtContra.Text;
+                usuario = TxtUsuario.Text;
+                nper.editarPersonal(idPersonal,FCedula, FNomAp, FDirec,
+                 FEdad, FCel, FCorreo, FNacionalidad, idcargo);
+
+                MostrarPersonal();
+            }
+           
+            else
+            {
+                MessageBox.Show("debes ser legal");
+            }
+          
+
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
+         
             EditarPersonal();
             TxtCedulaPer.Clear();
             txtNomPer.Clear();
@@ -166,5 +208,7 @@ namespace ProyecAcademiaEuropea
             TxtEdadPer.Clear();
             TxtTelefPer.Clear();
         }
+
+       
     }
 }

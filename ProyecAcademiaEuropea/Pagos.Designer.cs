@@ -56,9 +56,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(730, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(738, 12);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 54);
+            this.pictureBox3.Size = new System.Drawing.Size(51, 58);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 40;
             this.pictureBox3.TabStop = false;
@@ -67,9 +67,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(247, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(234, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
@@ -77,11 +77,11 @@
             // LbEstuantesR
             // 
             this.LbEstuantesR.AutoSize = true;
-            this.LbEstuantesR.Font = new System.Drawing.Font("Century Gothic", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbEstuantesR.Font = new System.Drawing.Font("Century Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbEstuantesR.ForeColor = System.Drawing.Color.Gold;
             this.LbEstuantesR.Location = new System.Drawing.Point(364, 48);
             this.LbEstuantesR.Name = "LbEstuantesR";
-            this.LbEstuantesR.Size = new System.Drawing.Size(105, 34);
+            this.LbEstuantesR.Size = new System.Drawing.Size(127, 40);
             this.LbEstuantesR.TabIndex = 41;
             this.LbEstuantesR.Text = "Pagos:";
             // 
@@ -152,7 +152,7 @@
             this.Eliminar,
             this.Editar});
             this.dtEstudiantes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtEstudiantes.Location = new System.Drawing.Point(0, 421);
+            this.dtEstudiantes.Location = new System.Drawing.Point(0, 463);
             this.dtEstudiantes.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.dtEstudiantes.Name = "dtEstudiantes";
             this.dtEstudiantes.ReadOnly = true;
@@ -161,7 +161,7 @@
             this.dtEstudiantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtEstudiantes.ShowCellToolTips = false;
             this.dtEstudiantes.ShowEditingIcon = false;
-            this.dtEstudiantes.Size = new System.Drawing.Size(790, 231);
+            this.dtEstudiantes.Size = new System.Drawing.Size(801, 231);
             this.dtEstudiantes.TabIndex = 51;
             // 
             // space1
@@ -255,7 +255,7 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(68, 152);
+            this.groupBox1.Location = new System.Drawing.Point(72, 192);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(626, 233);
             this.groupBox1.TabIndex = 71;
@@ -266,7 +266,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(790, 652);
+            this.ClientSize = new System.Drawing.Size(801, 694);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtEstudiantes);
             this.Controls.Add(this.pictureBox1);

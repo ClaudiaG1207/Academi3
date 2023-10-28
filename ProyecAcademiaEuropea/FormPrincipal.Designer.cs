@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtusuarios = new System.Windows.Forms.Button();
             this.btnAcercadeNo = new System.Windows.Forms.Button();
             this.btnInscripcion = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelpadre = new System.Windows.Forms.Panel();
             this.PBLogo = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTutor = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMini)).BeginInit();
@@ -54,6 +55,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.MidnightBlue;
+            this.MenuVertical.Controls.Add(this.btnTutor);
             this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.txtusuarios);
             this.MenuVertical.Controls.Add(this.btnAcercadeNo);
@@ -66,9 +68,26 @@
             this.MenuVertical.Location = new System.Drawing.Point(0, 43);
             this.MenuVertical.Margin = new System.Windows.Forms.Padding(4);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(288, 692);
+            this.MenuVertical.Size = new System.Drawing.Size(308, 692);
             this.MenuVertical.TabIndex = 1;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.AliceBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(4, 433);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(297, 47);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Contro de Pagos";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtusuarios
             // 
@@ -78,12 +97,12 @@
             this.txtusuarios.ForeColor = System.Drawing.Color.Goldenrod;
             this.txtusuarios.Image = ((System.Drawing.Image)(resources.GetObject("txtusuarios.Image")));
             this.txtusuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtusuarios.Location = new System.Drawing.Point(13, 48);
+            this.txtusuarios.Location = new System.Drawing.Point(4, 48);
             this.txtusuarios.Margin = new System.Windows.Forms.Padding(4);
             this.txtusuarios.Name = "txtusuarios";
-            this.txtusuarios.Size = new System.Drawing.Size(251, 47);
+            this.txtusuarios.Size = new System.Drawing.Size(297, 49);
             this.txtusuarios.TabIndex = 18;
-            this.txtusuarios.Text = "Registro de Usuarios";
+            this.txtusuarios.Text = "Usuarios";
             this.txtusuarios.UseVisualStyleBackColor = false;
             this.txtusuarios.Click += new System.EventHandler(this.txtusuarios_Click);
             // 
@@ -95,10 +114,10 @@
             this.btnAcercadeNo.ForeColor = System.Drawing.Color.Goldenrod;
             this.btnAcercadeNo.Image = ((System.Drawing.Image)(resources.GetObject("btnAcercadeNo.Image")));
             this.btnAcercadeNo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcercadeNo.Location = new System.Drawing.Point(13, 433);
+            this.btnAcercadeNo.Location = new System.Drawing.Point(4, 488);
             this.btnAcercadeNo.Margin = new System.Windows.Forms.Padding(4);
             this.btnAcercadeNo.Name = "btnAcercadeNo";
-            this.btnAcercadeNo.Size = new System.Drawing.Size(251, 47);
+            this.btnAcercadeNo.Size = new System.Drawing.Size(297, 47);
             this.btnAcercadeNo.TabIndex = 10;
             this.btnAcercadeNo.Text = "            Acerca de Nosotros";
             this.btnAcercadeNo.UseVisualStyleBackColor = false;
@@ -112,10 +131,10 @@
             this.btnInscripcion.ForeColor = System.Drawing.Color.Goldenrod;
             this.btnInscripcion.Image = ((System.Drawing.Image)(resources.GetObject("btnInscripcion.Image")));
             this.btnInscripcion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInscripcion.Location = new System.Drawing.Point(13, 268);
+            this.btnInscripcion.Location = new System.Drawing.Point(4, 323);
             this.btnInscripcion.Margin = new System.Windows.Forms.Padding(4);
             this.btnInscripcion.Name = "btnInscripcion";
-            this.btnInscripcion.Size = new System.Drawing.Size(251, 47);
+            this.btnInscripcion.Size = new System.Drawing.Size(297, 47);
             this.btnInscripcion.TabIndex = 9;
             this.btnInscripcion.Text = "Inscripción";
             this.btnInscripcion.UseVisualStyleBackColor = false;
@@ -129,10 +148,10 @@
             this.btnMateria.ForeColor = System.Drawing.Color.Goldenrod;
             this.btnMateria.Image = ((System.Drawing.Image)(resources.GetObject("btnMateria.Image")));
             this.btnMateria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMateria.Location = new System.Drawing.Point(13, 213);
+            this.btnMateria.Location = new System.Drawing.Point(4, 213);
             this.btnMateria.Margin = new System.Windows.Forms.Padding(4);
             this.btnMateria.Name = "btnMateria";
-            this.btnMateria.Size = new System.Drawing.Size(251, 47);
+            this.btnMateria.Size = new System.Drawing.Size(297, 47);
             this.btnMateria.TabIndex = 8;
             this.btnMateria.Text = "Registro de Curso";
             this.btnMateria.UseVisualStyleBackColor = false;
@@ -146,10 +165,10 @@
             this.btnNota.ForeColor = System.Drawing.Color.Goldenrod;
             this.btnNota.Image = ((System.Drawing.Image)(resources.GetObject("btnNota.Image")));
             this.btnNota.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNota.Location = new System.Drawing.Point(13, 323);
+            this.btnNota.Location = new System.Drawing.Point(4, 378);
             this.btnNota.Margin = new System.Windows.Forms.Padding(4);
             this.btnNota.Name = "btnNota";
-            this.btnNota.Size = new System.Drawing.Size(251, 47);
+            this.btnNota.Size = new System.Drawing.Size(297, 47);
             this.btnNota.TabIndex = 5;
             this.btnNota.Text = "Contro de Notas";
             this.btnNota.UseVisualStyleBackColor = false;
@@ -163,10 +182,10 @@
             this.btnDocente.ForeColor = System.Drawing.Color.Goldenrod;
             this.btnDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnDocente.Image")));
             this.btnDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDocente.Location = new System.Drawing.Point(13, 103);
+            this.btnDocente.Location = new System.Drawing.Point(4, 103);
             this.btnDocente.Margin = new System.Windows.Forms.Padding(4);
             this.btnDocente.Name = "btnDocente";
-            this.btnDocente.Size = new System.Drawing.Size(251, 47);
+            this.btnDocente.Size = new System.Drawing.Size(297, 47);
             this.btnDocente.TabIndex = 4;
             this.btnDocente.Text = "Registro de Personal";
             this.btnDocente.UseVisualStyleBackColor = false;
@@ -180,12 +199,12 @@
             this.btnEstudiante.ForeColor = System.Drawing.Color.Goldenrod;
             this.btnEstudiante.Image = ((System.Drawing.Image)(resources.GetObject("btnEstudiante.Image")));
             this.btnEstudiante.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstudiante.Location = new System.Drawing.Point(13, 158);
+            this.btnEstudiante.Location = new System.Drawing.Point(4, 158);
             this.btnEstudiante.Margin = new System.Windows.Forms.Padding(4);
             this.btnEstudiante.Name = "btnEstudiante";
-            this.btnEstudiante.Size = new System.Drawing.Size(251, 47);
+            this.btnEstudiante.Size = new System.Drawing.Size(297, 47);
             this.btnEstudiante.TabIndex = 0;
-            this.btnEstudiante.Text = "Registro Estudiantes";
+            this.btnEstudiante.Text = "Registro de Estudiantes";
             this.btnEstudiante.UseVisualStyleBackColor = false;
             this.btnEstudiante.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -227,9 +246,9 @@
             // 
             this.panelpadre.Controls.Add(this.PBLogo);
             this.panelpadre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelpadre.Location = new System.Drawing.Point(288, 43);
+            this.panelpadre.Location = new System.Drawing.Point(308, 43);
             this.panelpadre.Name = "panelpadre";
-            this.panelpadre.Size = new System.Drawing.Size(846, 692);
+            this.panelpadre.Size = new System.Drawing.Size(826, 692);
             this.panelpadre.TabIndex = 3;
             // 
             // PBLogo
@@ -238,27 +257,28 @@
             this.PBLogo.Image = ((System.Drawing.Image)(resources.GetObject("PBLogo.Image")));
             this.PBLogo.Location = new System.Drawing.Point(0, 0);
             this.PBLogo.Name = "PBLogo";
-            this.PBLogo.Size = new System.Drawing.Size(846, 692);
+            this.PBLogo.Size = new System.Drawing.Size(826, 692);
             this.PBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PBLogo.TabIndex = 4;
             this.PBLogo.TabStop = false;
             this.PBLogo.Click += new System.EventHandler(this.PBLogo_Click);
             // 
-            // button1
+            // btnTutor
             // 
-            this.button1.BackColor = System.Drawing.Color.AliceBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Goldenrod;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(13, 378);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 47);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Contro de Pagos";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnTutor.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnTutor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTutor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTutor.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btnTutor.Image = ((System.Drawing.Image)(resources.GetObject("btnTutor.Image")));
+            this.btnTutor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTutor.Location = new System.Drawing.Point(4, 268);
+            this.btnTutor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTutor.Name = "btnTutor";
+            this.btnTutor.Size = new System.Drawing.Size(297, 47);
+            this.btnTutor.TabIndex = 20;
+            this.btnTutor.Text = "Registro de Tutor";
+            this.btnTutor.UseVisualStyleBackColor = false;
+            this.btnTutor.Click += new System.EventHandler(this.btnTutor_Click);
             // 
             // FormPrincipal
             // 
@@ -300,5 +320,6 @@
         private System.Windows.Forms.PictureBox PBLogo;
         private System.Windows.Forms.Button txtusuarios;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTutor;
     }
 }

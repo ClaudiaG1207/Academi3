@@ -53,14 +53,14 @@
             this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtEstudiantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -147,11 +147,11 @@
             // LbEstuantesR
             // 
             this.LbEstuantesR.AutoSize = true;
-            this.LbEstuantesR.Font = new System.Drawing.Font("Century Gothic", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbEstuantesR.Font = new System.Drawing.Font("Century Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbEstuantesR.ForeColor = System.Drawing.Color.Gold;
-            this.LbEstuantesR.Location = new System.Drawing.Point(667, 55);
+            this.LbEstuantesR.Location = new System.Drawing.Point(624, 55);
             this.LbEstuantesR.Name = "LbEstuantesR";
-            this.LbEstuantesR.Size = new System.Drawing.Size(108, 37);
+            this.LbEstuantesR.Size = new System.Drawing.Size(121, 40);
             this.LbEstuantesR.TabIndex = 64;
             this.LbEstuantesR.Text = "Notas:";
             // 
@@ -210,9 +210,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(507, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(428, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(140, 122);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
@@ -347,6 +347,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Gold;
+            this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Navy;
+            this.button1.Location = new System.Drawing.Point(461, 143);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 37);
+            this.button1.TabIndex = 87;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gold;
+            this.button2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Navy;
+            this.button2.Location = new System.Drawing.Point(459, 187);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 37);
+            this.button2.TabIndex = 86;
+            this.button2.Text = "Guadar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
@@ -425,30 +449,6 @@
             this.groupBox3.Size = new System.Drawing.Size(504, 135);
             this.groupBox3.TabIndex = 86;
             this.groupBox3.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gold;
-            this.button1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Navy;
-            this.button1.Location = new System.Drawing.Point(461, 143);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 37);
-            this.button1.TabIndex = 87;
-            this.button1.Text = "Actualizar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Gold;
-            this.button2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Navy;
-            this.button2.Location = new System.Drawing.Point(459, 187);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 37);
-            this.button2.TabIndex = 86;
-            this.button2.Text = "Guadar";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // Nota
             // 

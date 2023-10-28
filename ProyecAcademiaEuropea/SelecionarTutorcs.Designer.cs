@@ -42,8 +42,8 @@
             this.dtTutor.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtTutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtTutor.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtTutor.Location = new System.Drawing.Point(0, 363);
-            this.dtTutor.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
+            this.dtTutor.Location = new System.Drawing.Point(0, 232);
+            this.dtTutor.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.dtTutor.Name = "dtTutor";
             this.dtTutor.ReadOnly = true;
             this.dtTutor.RowHeadersWidth = 82;
@@ -51,35 +51,42 @@
             this.dtTutor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtTutor.ShowCellToolTips = false;
             this.dtTutor.ShowEditingIcon = false;
-            this.dtTutor.Size = new System.Drawing.Size(872, 436);
+            this.dtTutor.Size = new System.Drawing.Size(581, 279);
             this.dtTutor.TabIndex = 648;
             this.dtTutor.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtTutor_CellContentDoubleClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 134);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(52, 108);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 25);
+            this.label1.Size = new System.Drawing.Size(174, 27);
             this.label1.TabIndex = 649;
             this.label1.Text = "Nombre Tutor :";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(347, 131);
+            this.textBox1.Location = new System.Drawing.Point(258, 114);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(330, 28);
+            this.textBox1.Size = new System.Drawing.Size(221, 19);
             this.textBox1.TabIndex = 650;
             // 
             // SelecionarTutorcs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 799);
+            this.BackColor = System.Drawing.Color.Navy;
+            this.ClientSize = new System.Drawing.Size(581, 511);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtTutor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SelecionarTutorcs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SelecionarTutorcs";

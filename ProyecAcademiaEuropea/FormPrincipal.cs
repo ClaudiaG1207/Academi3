@@ -105,5 +105,20 @@ namespace ProyecAcademiaEuropea
             Nota nota = new Nota();
             nota.Show();
         }
+
+        private void btnTutor_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TutorEstudiante tuto = new TutorEstudiante();
+            tuto.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Pagos pag = new Pagos ();
+            pag.Show();
+
+        }
     }
 }

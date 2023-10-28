@@ -15,7 +15,9 @@ namespace ProyecAcademiaEuropea
     {
         public TutorEstudiante()
         {
+            
             InitializeComponent();
+            MostrarTutor();
         }
         NTutor tuto = new NTutor();
         public string FCedula;
@@ -77,10 +79,16 @@ namespace ProyecAcademiaEuropea
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             INSERTAR();
-
             LimpiarCampos();
             MostrarTutor();
 
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormPrincipal FP = new FormPrincipal();
+            FP.Show();
         }
     }
 }

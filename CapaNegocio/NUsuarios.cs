@@ -35,6 +35,7 @@ namespace CapaNegocio
         {
             string PassHasheada = Usuariop.Login(NombreUsuario);
             bool Verificar;
+            
             if (hashPassword.VerifyPassword(ContrasenaUser, PassHasheada) == true)
             {
                 Verificar = true;
