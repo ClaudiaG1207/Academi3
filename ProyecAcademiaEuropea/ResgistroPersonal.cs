@@ -140,8 +140,13 @@ namespace ProyecAcademiaEuropea
         {
             NPersonal nper = new NPersonal();
             int x = Convert.ToInt32(TxtEdadPer.Text);
-            if (x>=18)
+            if (x<=17)
             {
+                MessageBox.Show("debes ser legal");
+            }
+            else
+            {
+                
                 FCedula = TxtCedulaPer.Text;
                 FNomAp = txtNomPer.Text;
                 FDirec = TxtDirecPer.Text;
@@ -156,21 +161,34 @@ namespace ProyecAcademiaEuropea
                     FEdad, FCel, FCorreo, FNacionalidad, usuario, clave, idcargo);
                 MostrarPersonal();
             }
-            else
-            {
-                MessageBox.Show("debes ser legal");
-            }
             
            
             
+        }
+        private void Limpiar()
+        {
+            TxtCedulaPer.Clear();
+            txtNomPer.Clear();
+            TxtDirecPer.Clear();
+            TxtEdadPer.Clear();
+            TxtCedulaPer.Clear();
+            TxtCorreoPer.Clear();
+            TxtEdadPer.Clear();
+            TxtTelefPer.Clear();
         }
 
         private void EditarPersonal()
         {
             NPersonal nper = new NPersonal();
             int x = Convert.ToInt32(TxtEdadPer.Text);
-            if (x >= 18)
+            if (x <= 18)
             {
+                MessageBox.Show("debes ser legal");
+            }
+           
+            else
+            {
+               
                 FCedula = TxtCedulaPer.Text;
                 FNomAp = txtNomPer.Text;
                 FDirec = TxtDirecPer.Text;
@@ -181,15 +199,10 @@ namespace ProyecAcademiaEuropea
                 idcargo = int.Parse(CbCargoPer.SelectedValue.ToString());
                 clave = TxtContra.Text;
                 usuario = TxtUsuario.Text;
-                nper.editarPersonal(idPersonal,FCedula, FNomAp, FDirec,
+                nper.editarPersonal(idPersonal, FCedula, FNomAp, FDirec,
                  FEdad, FCel, FCorreo, FNacionalidad, idcargo);
-
+                Limpiar();
                 MostrarPersonal();
-            }
-           
-            else
-            {
-                MessageBox.Show("debes ser legal");
             }
           
 
@@ -199,14 +212,7 @@ namespace ProyecAcademiaEuropea
         {
          
             EditarPersonal();
-            TxtCedulaPer.Clear();
-            txtNomPer.Clear();
-            TxtDirecPer.Clear();
-            TxtEdadPer.Clear();
-            TxtCedulaPer.Clear();
-            TxtCorreoPer.Clear();
-            TxtEdadPer.Clear();
-            TxtTelefPer.Clear();
+            
         }
 
        

@@ -24,7 +24,7 @@ namespace ProyecAcademiaEuropea
         int idIdioma;
         public string IDIOMA;
         public double COSTO;
-        public int IdNivelCurso;
+        
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -46,8 +46,8 @@ namespace ProyecAcademiaEuropea
             funcion.MostarIdioma(dt);
             dtIdioma.DataSource = dt;
             Bases.DiseñoDtv(ref dtIdioma);
-            dtIdioma.Columns[3].Visible = false;
-            funcion.MostarNivelCurso(cbnivel);
+            
+            
         }
         private void INSERTAR()
         {
@@ -55,9 +55,7 @@ namespace ProyecAcademiaEuropea
             Costo = Convert.ToDouble(TxtCostoIdioma.Text);
             TxtCostoIdioma.Clear();
             TxtNomIdioma.Clear();
-            IdNivelCurso = int.Parse(cbnivel.SelectedValue.ToString());
-            Idio.AgregarIdioma(IdNivelCurso, NomIdioma, Costo);
-
+            Idio.AgregarIdioma( NomIdioma, Costo);
             MostrarIdioma();
             MessageBox.Show("Se realizo el regitro con exito");
         }
@@ -123,7 +121,6 @@ namespace ProyecAcademiaEuropea
         private void EditarIdioma()
 
         {
-
             IDIOMA = TxtNomIdioma.Text;
             COSTO = Convert.ToDouble(TxtCostoIdioma.Text);
             TxtCostoIdioma.Clear();

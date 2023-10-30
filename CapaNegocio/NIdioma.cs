@@ -12,9 +12,9 @@ namespace CapaNegocio
     public class NIdioma
     {
         DIdioma Idioma = new DIdioma();
-        public void AgregarIdioma(int idnivelcurso,string NombreIdioma, double Costo)
+        public void AgregarIdioma(string NombreIdioma, double Costo)
         {
-            Idioma.Insertaridioma(idnivelcurso ,NombreIdioma, Costo);
+            Idioma.Insertaridioma(NombreIdioma, Costo);
         }
         public void EliminarIdioma(int id)
         {
@@ -28,9 +28,14 @@ namespace CapaNegocio
         {
             Idioma.MostarIdioma(ref dt);
         }
-        public void MostarNivelCurso(ComboBox combo)
+        public void MostrarNivel(ComboBox combo)
         {
-            Idioma.MostrarNivelCurso(combo);
+            Idioma.MostrarNivel(combo);
         }
+        public void MostrarIdiomaCombo(ComboBox combo)
+        {
+            Idioma.MostrarIdiomaCombo(combo);
+        }
+
     }
 }

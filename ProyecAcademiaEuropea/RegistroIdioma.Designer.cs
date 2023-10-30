@@ -42,8 +42,6 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.TxtNomIdioma = new System.Windows.Forms.TextBox();
-            this.cbnivel = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,18 +54,20 @@
             this.LbEstuantesR.AutoSize = true;
             this.LbEstuantesR.Font = new System.Drawing.Font("Century Gothic", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbEstuantesR.ForeColor = System.Drawing.Color.Gold;
-            this.LbEstuantesR.Location = new System.Drawing.Point(305, 64);
+            this.LbEstuantesR.Location = new System.Drawing.Point(458, 100);
+            this.LbEstuantesR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LbEstuantesR.Name = "LbEstuantesR";
-            this.LbEstuantesR.Size = new System.Drawing.Size(294, 40);
+            this.LbEstuantesR.Size = new System.Drawing.Size(460, 63);
             this.LbEstuantesR.TabIndex = 43;
             this.LbEstuantesR.Text = "Registrar Idioma:";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(731, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(1096, 19);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(59, 74);
+            this.pictureBox3.Size = new System.Drawing.Size(88, 116);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 47;
             this.pictureBox3.TabStop = false;
@@ -76,9 +76,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(147, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(220, 47);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 111);
+            this.pictureBox1.Size = new System.Drawing.Size(177, 173);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
@@ -88,17 +89,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 45);
+            this.label2.Location = new System.Drawing.Point(33, 70);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 25);
+            this.label2.Size = new System.Drawing.Size(262, 38);
             this.label2.TabIndex = 59;
             this.label2.Text = "Nombre Idioma:";
             // 
             // TxtCostoIdioma
             // 
-            this.TxtCostoIdioma.Location = new System.Drawing.Point(202, 100);
+            this.TxtCostoIdioma.Location = new System.Drawing.Point(303, 156);
+            this.TxtCostoIdioma.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtCostoIdioma.Name = "TxtCostoIdioma";
-            this.TxtCostoIdioma.Size = new System.Drawing.Size(112, 22);
+            this.TxtCostoIdioma.Size = new System.Drawing.Size(166, 31);
             this.TxtCostoIdioma.TabIndex = 62;
             this.TxtCostoIdioma.TextChanged += new System.EventHandler(this.TxtCostoIdioma_TextChanged);
             // 
@@ -107,9 +110,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(106, 100);
+            this.label1.Location = new System.Drawing.Point(159, 156);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 25);
+            this.label1.Size = new System.Drawing.Size(103, 38);
             this.label1.TabIndex = 61;
             this.label1.Text = "Costo:";
             // 
@@ -125,8 +129,8 @@
             this.Eliminar,
             this.Editar});
             this.dtIdioma.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtIdioma.Location = new System.Drawing.Point(0, 427);
-            this.dtIdioma.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.dtIdioma.Location = new System.Drawing.Point(0, 667);
+            this.dtIdioma.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
             this.dtIdioma.Name = "dtIdioma";
             this.dtIdioma.ReadOnly = true;
             this.dtIdioma.RowHeadersWidth = 82;
@@ -134,7 +138,7 @@
             this.dtIdioma.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtIdioma.ShowCellToolTips = false;
             this.dtIdioma.ShowEditingIcon = false;
-            this.dtIdioma.Size = new System.Drawing.Size(802, 279);
+            this.dtIdioma.Size = new System.Drawing.Size(1203, 436);
             this.dtIdioma.TabIndex = 63;
             this.dtIdioma.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtIdioma_CellClick);
             // 
@@ -171,9 +175,10 @@
             this.BtnGuardar.BackColor = System.Drawing.Color.Gold;
             this.BtnGuardar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.ForeColor = System.Drawing.Color.Navy;
-            this.BtnGuardar.Location = new System.Drawing.Point(528, 100);
+            this.BtnGuardar.Location = new System.Drawing.Point(792, 156);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(131, 37);
+            this.BtnGuardar.Size = new System.Drawing.Size(196, 58);
             this.BtnGuardar.TabIndex = 64;
             this.BtnGuardar.Text = "Guadar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
@@ -184,9 +189,10 @@
             this.BtnEditar.BackColor = System.Drawing.Color.Gold;
             this.BtnEditar.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditar.ForeColor = System.Drawing.Color.Navy;
-            this.BtnEditar.Location = new System.Drawing.Point(528, 100);
+            this.BtnEditar.Location = new System.Drawing.Point(792, 156);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(131, 37);
+            this.BtnEditar.Size = new System.Drawing.Size(196, 58);
             this.BtnEditar.TabIndex = 65;
             this.BtnEditar.Text = "Actualizar";
             this.BtnEditar.UseVisualStyleBackColor = false;
@@ -194,61 +200,45 @@
             // 
             // TxtNomIdioma
             // 
-            this.TxtNomIdioma.Location = new System.Drawing.Point(202, 45);
+            this.TxtNomIdioma.Location = new System.Drawing.Point(303, 70);
+            this.TxtNomIdioma.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtNomIdioma.Name = "TxtNomIdioma";
-            this.TxtNomIdioma.Size = new System.Drawing.Size(157, 22);
+            this.TxtNomIdioma.Size = new System.Drawing.Size(234, 31);
             this.TxtNomIdioma.TabIndex = 66;
             this.TxtNomIdioma.TextChanged += new System.EventHandler(this.TxtNomIdioma_TextChanged);
             // 
-            // cbnivel
-            // 
-            this.cbnivel.FormattingEnabled = true;
-            this.cbnivel.Location = new System.Drawing.Point(202, 144);
-            this.cbnivel.Name = "cbnivel";
-            this.cbnivel.Size = new System.Drawing.Size(157, 24);
-            this.cbnivel.TabIndex = 67;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(36, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 25);
-            this.label3.TabIndex = 68;
-            this.label3.Text = "Nivel idioma:";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cbnivel);
             this.groupBox1.Controls.Add(this.BtnGuardar);
             this.groupBox1.Controls.Add(this.BtnEditar);
             this.groupBox1.Controls.Add(this.TxtNomIdioma);
             this.groupBox1.Controls.Add(this.TxtCostoIdioma);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(53, 200);
+            this.groupBox1.Location = new System.Drawing.Point(80, 312);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(699, 185);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1048, 289);
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             // 
             // RegistroIdioma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
-            this.ClientSize = new System.Drawing.Size(802, 706);
+            this.ClientSize = new System.Drawing.Size(1203, 1103);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dtIdioma);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LbEstuantesR);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RegistroIdioma";
             this.Text = "Materia";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RegistroIdioma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -275,8 +265,6 @@
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.TextBox TxtNomIdioma;
-        private System.Windows.Forms.ComboBox cbnivel;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

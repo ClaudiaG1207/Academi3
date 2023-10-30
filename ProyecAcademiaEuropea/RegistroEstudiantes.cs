@@ -18,6 +18,7 @@ namespace ProyecAcademiaEuropea
     public partial class RegistroEstudiantes : Form
     {
         private bool labelsVerdes = false;
+        
         public RegistroEstudiantes()
         {
             InitializeComponent();
@@ -53,6 +54,8 @@ namespace ProyecAcademiaEuropea
         public string FCorreo;
         public string FNacionalidad;
         int idestudiante;
+        public int IDEstu { get; set; }
+        public string NomBEstu { get; set; }
 
         public  int idTutor;
         public  string NomTutor;
@@ -361,6 +364,13 @@ namespace ProyecAcademiaEuropea
             }
         }
 
-        
+        private void dtEstudiantes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IDEstu = int.Parse(dtEstudiantes.SelectedCells[3].Value.ToString());
+            NomBEstu = dtEstudiantes.SelectedCells[5].Value.ToString();
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     } 
 }

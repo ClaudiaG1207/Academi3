@@ -12,61 +12,17 @@ namespace CapaDatos
     public  class DIdioma
     {
         CD_Conexion Conect = new CD_Conexion();
-        public void Insertaridioma(int idnivelcurso, string Idioma, double costo)
+        public void Insertaridioma(string Idioma, double costo)
         {
             Conect.Abrir();
             SqlCommand AggUser = new SqlCommand("AgregarIdiomas",CD_Conexion.conectar);
             AggUser.CommandType = CommandType.StoredProcedure;
-            AggUser.Parameters.AddWithValue("@IdNivelCurso", idnivelcurso);
             AggUser.Parameters.AddWithValue("@Idioma", Idioma);    
             AggUser.Parameters.AddWithValue("@Costo", costo);
             AggUser.ExecuteNonQuery();
             Conect.cerrar();
         }
-        public void MostrarNivelCurso(ComboBox combo)
-        {
-            try
-            {
-                //Crear la colección para el autocompletado
-                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
-
-                //Abrir la conexión a la base de datos
-                Conect.Abrir();
-
-                //Crear el comando SQL para el procedimiento almacenado
-                SqlCommand da = new SqlCommand("MostrarNivelCurso", CD_Conexion.conectar);
-                da.CommandType = CommandType.StoredProcedure;
-
-                //Crear el adapatador para ejecuatr el comando y llenar los datos en el DataTable
-                SqlDataAdapter cb = new SqlDataAdapter(da);
-                DataTable dt = new DataTable();
-                cb.Fill(dt);
-
-                //Configurar el combobox para mostrar los datos
-                combo.ValueMember = "IDNivelCurso";
-                combo.DisplayMember = "NivelCurso";
-                combo.DataSource = dt;
-
-                //Agregar los datos a la colección de autocompletado
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    lista.Add(dt.Rows[i]["NivelCurso"].ToString());
-                }
-
-                //Asignar la colección de autocompletado al combobox
-                combo.AutoCompleteCustomSource = lista;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                //Cerrar la conexión a la base de datos
-                Conect.cerrar();
-                //cambio
-            }
-        }
+       
         public void MostarIdioma(ref DataTable dt)
         {
             try
@@ -121,6 +77,64 @@ namespace CapaDatos
             {
                 MessageBox.Show(ex.StackTrace);
 
+            }
+            finally
+            {
+                Conect.cerrar();
+            }
+        }
+        public void MostrarNivel(ComboBox combo)
+        {
+            try
+            {
+                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conect.Abrir();
+                SqlCommand da = new SqlCommand("MostrarNivelCurso", CD_Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IDNivelCurso";
+                combo.DisplayMember = "NivelCurso";
+                combo.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lista.Add(dt.Rows[i]["NivelCurso"].ToString());
+                }
+                combo.AutoCompleteCustomSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Conect.cerrar();
+            }
+        }
+        public void MostrarIdiomaCombo(ComboBox combo)
+        {
+            try
+            {
+                AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
+                Conect.Abrir();
+                SqlCommand da = new SqlCommand("ListarIdiomas", CD_Conexion.conectar);
+                da.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter cb = new SqlDataAdapter(da);
+                DataTable dt = new DataTable();
+                cb.Fill(dt);
+                combo.ValueMember = "IDIdioma";
+                combo.DisplayMember = "NombreIdioma";
+                combo.DataSource = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    lista.Add(dt.Rows[i]["NombreIdioma"].ToString());
+                }
+                combo.AutoCompleteCustomSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             finally
             {
