@@ -210,3 +210,4 @@ C:\Users\Claudia Guevara\source\repos\ClaudiaG1207\Academi3\ProyecAcademiaEurope
 C:\Users\Claudia Guevara\source\repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\Claudia Guevara\source\repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\obj\Debug\ProyecAcademiaEuropea.exe
 C:\Users\Claudia Guevara\source\repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\obj\Debug\ProyecAcademiaEuropea.pdb
+C:\Users\Dixon Blandon\source\repos\ClaudiaG1207\Academi3\ProyecAcademiaEuropea\obj\Debug\ProyecAcademiaEuropea.DetalleInscripcion.resources

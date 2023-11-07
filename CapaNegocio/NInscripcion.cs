@@ -19,5 +19,13 @@ namespace CapaNegocio
         {
             DInscripcion.MostarInscripcion(ref dt);
         }
+        public void MostrarInscripcionDetalle(DataTable dt,int idestudiante, int idinscripcion)
+        {
+            DInscripcion.MostarInscripcionDetalle(idestudiante,idinscripcion,ref dt);
+        }
+        public void PagarUnCurso(int id)
+        {
+            DInscripcion.PagarUNCUrso(id);
+        }
     }
 }

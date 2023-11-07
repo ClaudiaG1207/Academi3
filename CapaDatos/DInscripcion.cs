@@ -70,5 +70,49 @@ namespace CapaDatos
             }
             finally { conexion.cerrar(); }
         }
+        public void MostarInscripcionDetalle(int idestudiante, int idinscripcion, ref DataTable dt)
+        {
+            try
+            {
+                //Se abre la conexión a la base de datos
+                conexion.Abrir();
+
+                //Crea el comando SQL para el procedimiento almacenado
+                SqlDataAdapter da = new SqlDataAdapter("DetalleInscripcion", CD_Conexion.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idinscripcion", idinscripcion);
+                da.SelectCommand.Parameters.AddWithValue("@idestudiante", idestudiante);
+                da.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+            finally { conexion.cerrar(); }
+        }
+        public void PagarUNCUrso(int ID)
+        {
+            try
+            {
+                conexion.Abrir();
+                SqlCommand cmd = new SqlCommand("Pagar", CD_Conexion.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", ID);
+                cmd.ExecuteNonQuery();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                conexion.cerrar();
+            }
+        }
     }
+    
 }

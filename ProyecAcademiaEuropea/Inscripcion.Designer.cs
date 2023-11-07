@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inscripcion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LbEstuantesR = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,24 +45,24 @@
             this.CBSemestre = new System.Windows.Forms.ComboBox();
             this.CBGrupo = new System.Windows.Forms.ComboBox();
             this.dtMatriculas = new System.Windows.Forms.DataGridView();
-            this.space1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIdEstudiante = new System.Windows.Forms.TextBox();
+            this.btnbuscarestudiante = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnpagos = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataCursos = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnbuscarestudiante = new System.Windows.Forms.Button();
-            this.txtIdEstudiante = new System.Windows.Forms.TextBox();
             this.IdCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Semestre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.space1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Ver = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtMatriculas)).BeginInit();
@@ -242,7 +241,7 @@
             this.dtMatriculas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.space1,
             this.Eliminar,
-            this.Editar});
+            this.Ver});
             this.dtMatriculas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtMatriculas.Location = new System.Drawing.Point(0, 936);
             this.dtMatriculas.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
@@ -255,34 +254,7 @@
             this.dtMatriculas.ShowEditingIcon = false;
             this.dtMatriculas.Size = new System.Drawing.Size(2342, 436);
             this.dtMatriculas.TabIndex = 61;
-            // 
-            // space1
-            // 
-            this.space1.HeaderText = "";
-            this.space1.MinimumWidth = 10;
-            this.space1.Name = "space1";
-            this.space1.ReadOnly = true;
-            this.space1.Width = 200;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Image = global::ProyecAcademiaEuropea.Properties.Resources.borrar;
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.MinimumWidth = 10;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 200;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "";
-            this.Editar.Image = global::ProyecAcademiaEuropea.Properties.Resources.boligrafo;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.MinimumWidth = 10;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Width = 200;
+            this.dtMatriculas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtMatriculas_CellClick);
             // 
             // BtnEditar
             // 
@@ -340,6 +312,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Inscripción:";
             // 
+            // txtIdEstudiante
+            // 
+            this.txtIdEstudiante.Location = new System.Drawing.Point(404, 32);
+            this.txtIdEstudiante.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtIdEstudiante.Name = "txtIdEstudiante";
+            this.txtIdEstudiante.Size = new System.Drawing.Size(58, 47);
+            this.txtIdEstudiante.TabIndex = 72;
+            this.txtIdEstudiante.Visible = false;
+            // 
+            // btnbuscarestudiante
+            // 
+            this.btnbuscarestudiante.BackColor = System.Drawing.Color.Gold;
+            this.btnbuscarestudiante.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbuscarestudiante.ForeColor = System.Drawing.Color.Navy;
+            this.btnbuscarestudiante.Location = new System.Drawing.Point(818, 78);
+            this.btnbuscarestudiante.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnbuscarestudiante.Name = "btnbuscarestudiante";
+            this.btnbuscarestudiante.Size = new System.Drawing.Size(134, 58);
+            this.btnbuscarestudiante.TabIndex = 71;
+            this.btnbuscarestudiante.Text = "Buscar";
+            this.btnbuscarestudiante.UseVisualStyleBackColor = false;
+            this.btnbuscarestudiante.Click += new System.EventHandler(this.btnbuscarestudiante_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Gold;
+            this.button3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Navy;
+            this.button3.Location = new System.Drawing.Point(266, 558);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(196, 58);
+            this.button3.TabIndex = 70;
+            this.button3.Text = "Agregar";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // btnpagos
             // 
             this.btnpagos.BackColor = System.Drawing.Color.Gold;
@@ -382,14 +391,6 @@
             this.Nivel,
             this.Semestre,
             this.Grupo});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 13.8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataCursos.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataCursos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataCursos.Location = new System.Drawing.Point(4, 67);
             this.dataCursos.Margin = new System.Windows.Forms.Padding(20, 19, 20, 19);
@@ -402,43 +403,6 @@
             this.dataCursos.ShowEditingIcon = false;
             this.dataCursos.Size = new System.Drawing.Size(1093, 436);
             this.dataCursos.TabIndex = 62;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Gold;
-            this.button3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Navy;
-            this.button3.Location = new System.Drawing.Point(266, 558);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(196, 58);
-            this.button3.TabIndex = 70;
-            this.button3.Text = "Agregar";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnbuscarestudiante
-            // 
-            this.btnbuscarestudiante.BackColor = System.Drawing.Color.Gold;
-            this.btnbuscarestudiante.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscarestudiante.ForeColor = System.Drawing.Color.Navy;
-            this.btnbuscarestudiante.Location = new System.Drawing.Point(818, 78);
-            this.btnbuscarestudiante.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnbuscarestudiante.Name = "btnbuscarestudiante";
-            this.btnbuscarestudiante.Size = new System.Drawing.Size(134, 58);
-            this.btnbuscarestudiante.TabIndex = 71;
-            this.btnbuscarestudiante.Text = "Buscar";
-            this.btnbuscarestudiante.UseVisualStyleBackColor = false;
-            this.btnbuscarestudiante.Click += new System.EventHandler(this.btnbuscarestudiante_Click);
-            // 
-            // txtIdEstudiante
-            // 
-            this.txtIdEstudiante.Location = new System.Drawing.Point(404, 32);
-            this.txtIdEstudiante.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtIdEstudiante.Name = "txtIdEstudiante";
-            this.txtIdEstudiante.Size = new System.Drawing.Size(58, 47);
-            this.txtIdEstudiante.TabIndex = 72;
-            this.txtIdEstudiante.Visible = false;
             // 
             // IdCurso
             // 
@@ -487,6 +451,34 @@
             this.Grupo.MinimumWidth = 10;
             this.Grupo.Name = "Grupo";
             this.Grupo.ReadOnly = true;
+            // 
+            // space1
+            // 
+            this.space1.HeaderText = "";
+            this.space1.MinimumWidth = 10;
+            this.space1.Name = "space1";
+            this.space1.ReadOnly = true;
+            this.space1.Width = 200;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Image = global::ProyecAcademiaEuropea.Properties.Resources.borrar;
+            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Eliminar.MinimumWidth = 10;
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 200;
+            // 
+            // Ver
+            // 
+            this.Ver.HeaderText = "";
+            this.Ver.Image = global::ProyecAcademiaEuropea.Properties.Resources.boligrafo;
+            this.Ver.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Ver.MinimumWidth = 10;
+            this.Ver.Name = "Ver";
+            this.Ver.ReadOnly = true;
+            this.Ver.Width = 200;
             // 
             // Inscripcion
             // 
@@ -539,9 +531,6 @@
         private System.Windows.Forms.ComboBox CBSemestre;
         private System.Windows.Forms.ComboBox CBGrupo;
         private System.Windows.Forms.DataGridView dtMatriculas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn space1;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -557,5 +546,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nivel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Semestre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn space1;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
+        private System.Windows.Forms.DataGridViewImageColumn Ver;
     }
 }

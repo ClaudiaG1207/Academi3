@@ -16,6 +16,8 @@ namespace ProyecAcademiaEuropea
     {
         public int IDESTU;
         public string nomEStu;
+        public static int IdEstudiante;
+        public static int IdInscripcion;
         public Inscripcion()
         {
             InitializeComponent();
@@ -68,17 +70,26 @@ namespace ProyecAcademiaEuropea
         }
         private void AgregarCurso()
         {
-            int IdIdioma = int.Parse(CBIdioma.SelectedValue.ToString());
-            string Idioma = CBIdioma.Text;
-            int IdNivel = int.Parse(CBNivel.SelectedValue.ToString());
-            string Nivel = CBNivel.Text;
-            string Semestre = CBSemestre.Text;
-            string Grupo = CBGrupo.Text;
-
-            dataCursos.Rows.Add(new object[]
+            try
             {
+                int IdIdioma = int.Parse(CBIdioma.SelectedValue.ToString());
+                string Idioma = CBIdioma.Text;
+                int IdNivel = int.Parse(CBNivel.SelectedValue.ToString());
+                string Nivel = CBNivel.Text;
+                string Semestre = CBSemestre.Text;
+                string Grupo = CBGrupo.Text;
+
+                dataCursos.Rows.Add(new object[]
+                {
                     IdIdioma, Idioma, IdNivel, Nivel, Semestre, Grupo
-            });
+                });
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private void MostrarDatos()
         {
@@ -146,9 +157,24 @@ namespace ProyecAcademiaEuropea
             {
                 MessageBox.Show(ex.Message);
             }
-        
+
+        }
+        private void PasarIdInscripcion()
+        {
+            IdEstudiante = Convert.ToInt32(dtMatriculas.SelectedCells[4].Value);
+            IdInscripcion = Convert.ToInt32(dtMatriculas.SelectedCells[3].Value);
+            DetalleInscripcion da = new DetalleInscripcion();
+            da.Idestudiante = IdEstudiante;
+            da.Idinscripcion = IdInscripcion;
+            da.ShowDialog();
         }
 
-        
+        private void dtMatriculas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dtMatriculas.Columns["Ver"].Index)
+            {
+                PasarIdInscripcion();
+            }
+        }
     }
 }

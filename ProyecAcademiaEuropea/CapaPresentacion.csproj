@@ -55,6 +55,12 @@
     <Compile Include="CorreoRecu.Designer.cs">
       <DependentUpon>CorreoRecu.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetalleInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleInscripcion.Designer.cs">
+      <DependentUpon>DetalleInscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="CorreoRecu.resx">
       <DependentUpon>CorreoRecu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleInscripcion.resx">
+      <DependentUpon>DetalleInscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -215,6 +224,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dolar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
